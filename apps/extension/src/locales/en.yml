@@ -1,0 +1,176 @@
+ext_name: red-tracking · Web eye tracking
+ext_description: Turns your webcam into an eye tracker to study which parts of a web page participants look at. Camera video never leaves your device.
+
+common:
+  start: Start
+  stop: Stop
+  cancel: Cancel
+  continue: Continue
+  back: Back
+  retry: Retry
+  close: Close
+  loading: Loading…
+  error: Error
+  yes: Yes
+  no: No
+  download: Download
+  seconds: "$1 s"
+
+onboarding:
+  title: Welcome to red-tracking
+  intro: This extension uses your webcam to estimate where you look inside a web page during a research study.
+  step_consent: Consent
+  step_camera: Camera
+  step_check: Check
+  step_ready: Ready
+  consent_title: What is recorded and what is not
+  consent_records: Estimated gaze coordinates and screenshots of the study page are stored.
+  consent_not_records: Your camera video is NEVER stored or sent. Face analysis happens only on your device.
+  consent_scope: Recording is limited to the study website and stops when the study ends, when you close the tab, or whenever you decide.
+  consent_data: At the end you can review the report and decide whether to download or share it.
+  consent_accept: I understand and agree to participate
+  camera_title: Turn on your camera
+  camera_body: Chrome will ask for permission to use the camera. It is only used to detect your eyes on your own device.
+  camera_button: Turn on camera
+  camera_denied: Permission was denied. Enable it from the lock icon in the address bar and try again.
+  camera_select: Camera
+  camera_granted: Camera enabled
+  check_title: Adjust your position
+  check_body: Sit in front of the screen, about 50–70 cm away, with your face well lit.
+  check_ok: All good. You can continue.
+  ready_title: All set
+  ready_body: Open the side panel to enter the study code you received.
+  open_panel: Open side panel
+  privacy_link: Privacy policy
+
+env:
+  no_face: Your face is not detected. Look at the camera.
+  too_far: You are too far away. Move a bit closer.
+  too_close: You are too close. Move back a little.
+  too_dark: Too dark. Light your face from the front.
+  too_bright: Too bright or backlit. Avoid windows behind you.
+  unstable: Keep your head still for a moment.
+  face_ok: Face detected
+
+panel:
+  title: red-tracking
+  study_code_label: Study code
+  study_code_placeholder: Paste the code here (RT1.…)
+  join: Join
+  study_invalid: The code is not valid. Check it or request a new one.
+  study_loaded: "Study: $1"
+  study_target: "Site: $1"
+  study_duration: "Duration: $1 min"
+  study_leave: Change study
+  camera_needed: First enable the camera from the welcome page.
+  open_onboarding: Open welcome page
+  preview_toggle_video: Show video
+  preview_toggle_mesh: Show mesh
+  engine_starting: Starting camera…
+  engine_running: Camera active
+  engine_no_camera: No camera access
+  engine_error: "Engine error: $1"
+  fps: "$1 fps"
+  face_detected: Face detected
+  face_lost: Face not detected
+  start_session: Start session
+  start_hint: The study site will open and calibration will begin.
+  host_permission_denied: You need to allow access to the study site to continue.
+  calibrating: Calibrating…
+  validating: Validating…
+  recording: Recording
+  paused: Paused
+  paused_face: Paused - face not detected
+  paused_tab: Paused - return to the study tab
+  paused_geometry: Paused - the window was resized
+  finalizing: Building report…
+  done: Session finished
+  stop_session: End session
+  recalibrate: Recalibrate
+  resume: Resume
+  validation_result: "Accuracy: $1 px ($2°)"
+  validation_pass: Calibration OK
+  validation_warn: Acceptable accuracy. You may recalibrate to improve it.
+  validation_fail: Accuracy too low. Let's repeat the calibration.
+  head_drift_warn: You moved your head. Try to return to the initial position.
+  head_drift_recalibrate: You moved quite a bit. We recommend recalibrating.
+  elapsed: Time
+  open_report: View report
+  debug_gaze_dot: Show gaze dot
+  sessions_title: Saved sessions
+  narrow_viewport: The page area is very narrow. Make the side panel narrower by dragging its edge and maximise the window before calibrating.
+  copy_diag: Copy calibration diagnostics
+  copied_diag: Diagnostics copied
+  camera_disable: Turn camera off
+  camera_enable: Turn camera on
+  camera_disabled: Camera off
+  camera_disable_hint: Turns the camera and tracking off. Any running session is ended and its report generated.
+  action_stop_title: red-tracking · Recording. Click here to end the session.
+  capture_failed: "Could not capture the page: $1"
+  window_hint: Keep the side panel open and do not resize the window during the session. You can also end the session by clicking the red-tracking icon in the Chrome toolbar.
+
+overlay:
+  calibration_title: Calibration
+  calibration_intro: Follow the dot with your eyes without moving your head. Click to begin.
+  calibration_progress: "Point $1 of $2"
+  validation_title: Verification
+  validation_intro: One last step - look at the 4 dots that will appear.
+  repeat_points: Let's repeat a few points.
+  instructions_title: Study instructions
+  instructions_start: Begin
+  recording_started: Recording started. Browse normally.
+  face_lost: Face not detected
+  face_found: Face detected again
+  geometry_changed: The window changed. Let's do a quick recalibration.
+  wrong_tab: Return to the study tab to continue.
+  session_done: Session finished. Thank you for participating.
+  time_left: "$1 left"
+
+report:
+  title: Session report
+  heatmap: Heatmap
+  aois: Areas of interest
+  replay: Replay
+  export: Export
+  export_zip: Download package (.zip)
+  export_png: Download heatmap (PNG)
+  export_csv: Download metrics (CSV)
+  export_webm: Export video (WebM)
+  rendering_video: Rendering video… $1%
+  no_sessions: No recorded sessions yet.
+  session_list: Sessions
+  import_zip: Import package
+  study_new: New study
+  aoi_label: Area
+  aoi_ttff: First fixation (ms)
+  aoi_dwell: Total dwell (ms)
+  aoi_fixations: Fixations
+  aoi_visits: Visits
+  aoi_order: Order
+  aoi_below_resolution: Small area - interpret with care
+  page_visit: Page
+  mode_fixations: Fixations
+  mode_raw: Raw samples
+  no_tiles: No page screenshots. Check that you accepted the site-access permission when starting the session; without it Chrome does not allow capturing the tab.
+  coverage_warning: "Only $1% of the page was captured. Scroll more slowly next time."
+  summary_duration: Duration
+  summary_samples: Samples
+  summary_fixations: Fixations
+  summary_accuracy: Calibration accuracy
+  delete_session: Delete session
+  confirm_delete: Delete this session? This cannot be undone.
+
+study_form:
+  title: Create study
+  name: Name
+  target_url: Target URL
+  instructions: Instruction for the participant
+  duration: Duration (seconds, empty = manual)
+  points: Calibration points
+  aoi_selectors: CSS selectors of areas (one per line, "Label | selector")
+  show_dot: Show the gaze dot to the participant
+  generate: Generate code
+  code_label: Study code
+  link_label: Share link
+  copy: Copy
+  copied: Copied

@@ -1,0 +1,212 @@
+/*
+ * Styles for the rt-overlay shadow root. Imported by entrypoints/content.ts and
+ * injected into the shadow root by WXT (cssInjectionMode: 'ui').
+ * Everything lives inside the shadow root; the page never sees these rules.
+ */
+
+:host {
+  all: initial !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  display: block !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.rt-root {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+.rt-root[data-block] {
+  pointer-events: auto;
+}
+.rt-root * {
+  box-sizing: border-box;
+}
+
+.rt-hidden {
+  display: none !important;
+}
+
+/* Backdrop ----------------------------------------------------------------- */
+.rt-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 20, 0.85);
+}
+.rt-backdrop--soft {
+  background: rgba(10, 12, 20, 0.55);
+}
+
+/* Progress label ----------------------------------------------------------- */
+.rt-label {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Calibration target ------------------------------------------------------- */
+.rt-target {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+.rt-ring {
+  position: absolute;
+  left: -22px;
+  top: -22px;
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 82, 82, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+  animation: rt-shrink var(--rt-dwell, 1200ms) linear forwards;
+}
+.rt-dot {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e53935;
+  box-shadow: 0 0 6px rgba(229, 57, 53, 0.8);
+}
+@keyframes rt-shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    /* 44px → 14px */
+    transform: scale(0.318);
+  }
+}
+
+/* Cards (intro / validation / instructions) -------------------------------- */
+.rt-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  padding: 28px 32px;
+  border-radius: 16px;
+  background: #fff;
+  color: #14161c;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+.rt-card-title {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.rt-card-body {
+  font-size: 16px;
+  color: #2b2f3a;
+}
+.rt-card-body p {
+  margin: 0 0 10px;
+}
+.rt-card-body p:last-child {
+  margin-bottom: 0;
+}
+.rt-card-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 10px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: #e53935;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.rt-card-btn:hover {
+  background: #c62828;
+}
+.rt-card-btn:focus-visible {
+  outline: 3px solid rgba(229, 57, 53, 0.4);
+  outline-offset: 2px;
+}
+
+/* Toasts ------------------------------------------------------------------- */
+.rt-toasts {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 70vw;
+}
+.rt-toast {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #3a3f4b;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+  white-space: pre-wrap;
+  text-align: center;
+}
+.rt-toast--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.rt-toast--warn {
+  background: #b7791f;
+}
+.rt-toast--error {
+  background: #c62828;
+}
+.rt-toast--success {
+  background: #2e7d32;
+}
+
+/* Gaze dot ----------------------------------------------------------------- */
+.rt-gaze {
+  position: absolute;
+  left: -9px;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(229, 57, 53, 0.55);
+  border: 2px solid #fff;
+  transform: translate3d(-100px, -100px, 0);
+  transition: transform 40ms linear;
+  will-change: transform;
+}

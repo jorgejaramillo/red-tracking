@@ -1,0 +1,176 @@
+ext_name: red-tracking · Eye tracking web
+ext_description: Convierte tu webcam en un eye tracker para estudiar qué partes de una página web miran los participantes. El video de la cámara nunca sale de tu equipo.
+
+common:
+  start: Iniciar
+  stop: Terminar
+  cancel: Cancelar
+  continue: Continuar
+  back: Atrás
+  retry: Reintentar
+  close: Cerrar
+  loading: Cargando…
+  error: Error
+  yes: Sí
+  no: No
+  download: Descargar
+  seconds: "$1 s"
+
+onboarding:
+  title: Bienvenido a red-tracking
+  intro: Esta extensión usa tu cámara web para estimar hacia dónde miras dentro de una página web durante un estudio de investigación.
+  step_consent: Consentimiento
+  step_camera: Cámara
+  step_check: Chequeo
+  step_ready: Listo
+  consent_title: Qué se graba y qué no
+  consent_records: Se guardan las coordenadas estimadas de tu mirada y capturas de pantalla de la página del estudio.
+  consent_not_records: NUNCA se guarda ni se envía el video de tu cámara. El análisis de la cara ocurre solo en tu equipo.
+  consent_scope: La grabación se limita al sitio web del estudio y se detiene al terminar, al cerrar la pestaña o cuando tú lo decidas.
+  consent_data: Al finalizar podrás revisar el reporte y decidir si lo descargas o lo compartes.
+  consent_accept: Entiendo y acepto participar
+  camera_title: Activa tu cámara
+  camera_body: Chrome te pedirá permiso para usar la cámara. Solo se usa para detectar tus ojos en tu propio equipo.
+  camera_button: Activar cámara
+  camera_denied: El permiso fue denegado. Habilítalo en el ícono del candado de la barra de direcciones y vuelve a intentar.
+  camera_select: Cámara
+  camera_granted: Cámara activada
+  check_title: Ajusta tu posición
+  check_body: Colócate frente a la pantalla, a unos 50–70 cm, con la cara bien iluminada.
+  check_ok: Todo listo. Puedes continuar.
+  ready_title: Todo listo
+  ready_body: Abre el panel lateral para ingresar el código del estudio que te enviaron.
+  open_panel: Abrir panel lateral
+  privacy_link: Política de privacidad
+
+env:
+  no_face: No se detecta tu cara. Mira hacia la cámara.
+  too_far: Estás muy lejos. Acércate un poco.
+  too_close: Estás muy cerca. Aléjate un poco.
+  too_dark: Hay poca luz. Ilumina tu cara de frente.
+  too_bright: Hay demasiada luz o contraluz. Evita ventanas detrás de ti.
+  unstable: Mantén la cabeza quieta un momento.
+  face_ok: Cara detectada
+
+panel:
+  title: red-tracking
+  study_code_label: Código del estudio
+  study_code_placeholder: Pega aquí el código (RT1.…)
+  join: Unirse
+  study_invalid: El código no es válido. Revísalo o pide uno nuevo.
+  study_loaded: "Estudio: $1"
+  study_target: "Sitio: $1"
+  study_duration: "Duración: $1 min"
+  study_leave: Cambiar estudio
+  camera_needed: Primero activa la cámara desde la página de bienvenida.
+  open_onboarding: Abrir bienvenida
+  preview_toggle_video: Mostrar video
+  preview_toggle_mesh: Mostrar malla
+  engine_starting: Iniciando cámara…
+  engine_running: Cámara activa
+  engine_no_camera: Sin acceso a la cámara
+  engine_error: "Error del motor: $1"
+  fps: "$1 fps"
+  face_detected: Cara detectada
+  face_lost: Cara no detectada
+  start_session: Iniciar sesión
+  start_hint: Se abrirá el sitio del estudio y comenzará la calibración.
+  host_permission_denied: Necesitas permitir el acceso al sitio del estudio para continuar.
+  calibrating: Calibrando…
+  validating: Validando…
+  recording: Grabando
+  paused: En pausa
+  paused_face: Pausado - no se detecta tu cara
+  paused_tab: Pausado - vuelve a la pestaña del estudio
+  paused_geometry: Pausado - la ventana cambió de tamaño
+  finalizing: Generando reporte…
+  done: Sesión terminada
+  stop_session: Terminar sesión
+  recalibrate: Recalibrar
+  resume: Reanudar
+  validation_result: "Precisión: $1 px ($2°)"
+  validation_pass: Calibración correcta
+  validation_warn: Precisión aceptable. Puedes recalibrar si quieres mejorarla.
+  validation_fail: Precisión insuficiente. Vamos a repetir la calibración.
+  head_drift_warn: Moviste la cabeza. Intenta volver a la posición inicial.
+  head_drift_recalibrate: Te moviste bastante. Recomendamos recalibrar.
+  elapsed: Tiempo
+  open_report: Ver reporte
+  debug_gaze_dot: Mostrar punto de mirada
+  sessions_title: Sesiones guardadas
+  narrow_viewport: La página quedó muy angosta. Haz el panel lateral más estrecho arrastrando su borde y maximiza la ventana antes de calibrar.
+  copy_diag: Copiar diagnóstico de calibración
+  copied_diag: Diagnóstico copiado
+  camera_disable: Desactivar cámara
+  camera_enable: Activar cámara
+  camera_disabled: Cámara desactivada
+  camera_disable_hint: Apaga la cámara y el seguimiento. Si hay una sesión en curso, se termina y se genera su reporte.
+  action_stop_title: red-tracking · Grabando. Haz clic aquí para terminar la sesión.
+  capture_failed: "No se pudo capturar la página: $1"
+  window_hint: Mantén el panel lateral abierto y no cambies el tamaño de la ventana durante la sesión. Para terminar también puedes hacer clic en el ícono de red-tracking en la barra de Chrome.
+
+overlay:
+  calibration_title: Calibración
+  calibration_intro: Sigue el punto con la mirada, sin mover la cabeza. Haz clic para comenzar.
+  calibration_progress: "Punto $1 de $2"
+  validation_title: Verificación
+  validation_intro: Un último paso - mira los 4 puntos que aparecerán.
+  repeat_points: Vamos a repetir algunos puntos.
+  instructions_title: Instrucciones del estudio
+  instructions_start: Comenzar
+  recording_started: Grabación iniciada. Navega con normalidad.
+  face_lost: No se detecta tu cara
+  face_found: Cara detectada de nuevo
+  geometry_changed: La ventana cambió. Vamos a hacer una calibración rápida.
+  wrong_tab: Vuelve a la pestaña del estudio para continuar.
+  session_done: Sesión terminada. Gracias por participar.
+  time_left: "Quedan $1"
+
+report:
+  title: Reporte de sesión
+  heatmap: Mapa de calor
+  aois: Zonas de interés
+  replay: Replay
+  export: Exportar
+  export_zip: Descargar paquete (.zip)
+  export_png: Descargar heatmap (PNG)
+  export_csv: Descargar métricas (CSV)
+  export_webm: Exportar video (WebM)
+  rendering_video: Renderizando video… $1%
+  no_sessions: Aún no hay sesiones grabadas.
+  session_list: Sesiones
+  import_zip: Importar paquete
+  study_new: Nuevo estudio
+  aoi_label: Zona
+  aoi_ttff: Primera mirada (ms)
+  aoi_dwell: Tiempo total (ms)
+  aoi_fixations: Fijaciones
+  aoi_visits: Visitas
+  aoi_order: Orden
+  aoi_below_resolution: Zona pequeña - interpretar con cuidado
+  page_visit: Página
+  mode_fixations: Fijaciones
+  mode_raw: Muestras crudas
+  no_tiles: No hay capturas de la página. Revisa que al iniciar la sesión hayas aceptado el permiso de acceso a los sitios; sin él Chrome no permite capturar la pestaña.
+  coverage_warning: "Solo se capturó el $1% de la página. Desplázate más lento la próxima vez."
+  summary_duration: Duración
+  summary_samples: Muestras
+  summary_fixations: Fijaciones
+  summary_accuracy: Precisión de calibración
+  delete_session: Eliminar sesión
+  confirm_delete: ¿Eliminar esta sesión? Esta acción no se puede deshacer.
+
+study_form:
+  title: Crear estudio
+  name: Nombre
+  target_url: URL objetivo
+  instructions: Instrucción para el participante
+  duration: Duración (segundos, vacío = manual)
+  points: Puntos de calibración
+  aoi_selectors: Selectores CSS de zonas (uno por línea, "Etiqueta | selector")
+  show_dot: Mostrar el punto de mirada al participante
+  generate: Generar código
+  code_label: Código del estudio
+  link_label: Enlace para compartir
+  copy: Copiar
+  copied: Copiado

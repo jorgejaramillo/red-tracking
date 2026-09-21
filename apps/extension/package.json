@@ -1,0 +1,37 @@
+{
+  "name": "@red-tracking/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "red-tracking Chrome MV3 extension: webcam gaze tracking on web pages",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "wxt zip",
+    "typecheck": "wxt prepare && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "e2e": "pnpm build:e2e && playwright test e2e/session.spec.ts",
+    "build:e2e": "WXT_E2E=1 WXT_FAKE_CAMERA=1 WXT_OUT_DIR=.output-e2e wxt build",
+    "build:e2e-real": "WXT_E2E=1 WXT_OUT_DIR=.output-e2e-real wxt build",
+    "e2e:engine": "pnpm build:e2e-real && RT_EXT_DIR=.output-e2e-real playwright test e2e/engine.spec.ts"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.0.1",
+    "@red-tracking/core": "workspace:*",
+    "@red-tracking/protocol": "workspace:*",
+    "fflate": "^0.8.2",
+    "idb": "^8.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.13.5",
+    "@wxt-dev/i18n": "^0.2.7",
+    "@wxt-dev/module-svelte": "^2.0.5",
+    "svelte": "^5.57.1",
+    "svelte-check": "^4.7.6",
+    "typescript": "5.9.3",
+    "vite": "^7.3.6",
+    "vitest": "^4.1.11",
+    "wxt": "^0.21.4"
+  }
+}

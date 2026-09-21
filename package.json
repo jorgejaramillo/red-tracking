@@ -1,0 +1,21 @@
+{
+  "name": "red-tracking",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Webcam eye tracking for web pages — Chrome MV3 extension + report tooling",
+  "packageManager": "pnpm@12.4.2",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @red-tracking/extension dev",
+    "build": "pnpm -r --filter './packages/**' --filter './apps/**' build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "zip": "pnpm --filter @red-tracking/extension zip",
+    "postinstall": "node scripts/fetch-assets.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

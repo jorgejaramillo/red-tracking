@@ -1,0 +1,25 @@
+{
+  "name": "@red-tracking/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure TypeScript gaze-estimation, fixation, heatmap and AOI analytics for red-tracking (no browser APIs)",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "echo 'core: source-only package'"
+  },
+  "dependencies": {
+    "@red-tracking/protocol": "workspace:*",
+    "fflate": "^0.8.2"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "^4.1.11"
+  }
+}

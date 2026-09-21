@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.output/
+.output-e2e/
+.output-e2e-real/
+.wxt/
+*.log
+.DS_Store
+coverage/
+test-results/
+playwright-report/
+# Large binary assets fetched by scripts/fetch-assets.mjs
+apps/extension/public/mediapipe/
+apps/extension/public/models/
+# Local env
+.env
+.env.*
+!.env.example
+.dev.vars

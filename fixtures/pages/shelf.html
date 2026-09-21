@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Góndola de prueba · red-tracking</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f6f6f4; color: #222; }
+    header { position: sticky; top: 0; background: #b3001b; color: #fff; padding: 14px 24px; font-weight: 700; z-index: 10; }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 22px; margin: 8px 0 20px; }
+    .shelf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+    .product { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 16px; min-height: 260px; display: flex; flex-direction: column; justify-content: space-between; }
+    .product .img { height: 150px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 42px; font-weight: 800; color: #fff; }
+    .product h2 { font-size: 16px; margin: 12px 0 4px; }
+    .price { font-size: 20px; font-weight: 700; color: #b3001b; }
+    button { background: #b3001b; color: #fff; border: 0; border-radius: 6px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+    footer { padding: 60px 24px; color: #666; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>Supermercado de prueba — Cereales</header>
+  <main>
+    <h1>Cereales para el desayuno</h1>
+    <section class="shelf" aria-label="estante 1">
+      <article class="product" data-aoi="A"><div class="img" style="background:#2b6cb0">A</div><h2>Cereal A — Avena crocante</h2><div class="price">$12.900</div><button>Agregar</button></article>
+      <article class="product" data-aoi="B"><div class="img" style="background:#2f855a">B</div><h2>Cereal B — Maíz con miel</h2><div class="price">$9.500</div><button>Agregar</button></article>
+      <article class="product" data-aoi="C"><div class="img" style="background:#c05621">C</div><h2>Cereal C — Granola frutos</h2><div class="price">$15.200</div><button>Agregar</button></article>
+    </section>
+    <section class="shelf" aria-label="estante 2">
+      <article class="product" data-aoi="D"><div class="img" style="background:#6b46c1">D</div><h2>Cereal D — Chocolate</h2><div class="price">$8.900</div><button>Agregar</button></article>
+      <article class="product" data-aoi="E"><div class="img" style="background:#b7791f">E</div><h2>Cereal E — Integral</h2><div class="price">$11.400</div><button>Agregar</button></article>
+      <article class="product" data-aoi="F"><div class="img" style="background:#2c7a7b">F</div><h2>Cereal F — Arroz inflado</h2><div class="price">$7.300</div><button>Agregar</button></article>
+    </section>
+  </main>
+  <footer>Página de prueba para red-tracking · sin contenido real</footer>
+</body>
+</html>

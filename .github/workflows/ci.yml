@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm --filter @red-tracking/extension build
+      - name: Playwright browsers
+        run: pnpm --filter @red-tracking/extension exec playwright install --with-deps chromium
+      - name: E2E (synthetic camera)
+        run: xvfb-run -a pnpm --filter @red-tracking/extension e2e
+      - name: E2E (real MediaPipe engine)
+        run: xvfb-run -a pnpm --filter @red-tracking/extension e2e:engine
